@@ -57,6 +57,7 @@ function App() {
 
   // Function to show alert with website information
   const showInfo = () => {
+    console.log("Button clicked");
     alert("This website shows your location based on GPS and IP address. For the best experience, use Microsoft Edge and ensure your PC's GPS is turned on. Also if one of the markers aren't visable refresh your browser");
   };
 
@@ -99,7 +100,7 @@ function App() {
           border: "none",
           borderRadius: "5px",
           cursor: "pointer",
-          zIndex: 1000 // Ensure the button is above other elements
+          zIndex: 10000 // Ensure the button is above other elements
         }}
       >
         About This Website
