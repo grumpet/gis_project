@@ -55,8 +55,13 @@ function App() {
       });
   }, []);
 
+  // Function to show alert with website information
+  const showInfo = () => {
+    alert("This website shows your location based on GPS and IP address. For the best experience, use Microsoft Edge and ensure your PC's GPS is turned on. Also if one of the markers aren't visable refresh your browser");
+  };
+
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "100vh", position: "relative" }}>
       <MapContainer center={gpsPosition} zoom={13} style={{ height: "100%", width: "100%" }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -79,8 +84,26 @@ function App() {
             Organization: {ipInfo.org}
           </Popup>
         </Marker>
-
       </MapContainer>
+
+      {/* Static Button at the Bottom Left */}
+      <button
+        onClick={showInfo}
+        style={{
+          position: "absolute",
+          bottom: "10px",
+          left: "10px",
+          padding: "10px 20px",
+          backgroundColor: "#007bff",
+          color: "#fff",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          zIndex: 1000 // Ensure the button is above other elements
+        }}
+      >
+        About This Website
+      </button>
     </div>
   );
 }
