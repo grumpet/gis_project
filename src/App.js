@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
 import L from 'leaflet';
@@ -57,8 +57,17 @@ function App() {
 
   // Function to show alert with website information
   const showInfo = () => {
-    console.log("Button clicked");
-    alert("This website shows your location based on GPS and IP address. For the best experience, use Microsoft Edge and ensure your PC's GPS is turned on. Also if one of the markers aren't visable refresh your browser");
+    alert(
+      "This website provides the following features:\n\n" +
+      "• Displays your current location based on GPS coordinates.\n" +
+      "• Shows your approximate location based on your IP address.\n" +
+      "• Draws a line connecting the GPS and IP locations on the map.\n" +
+      "• Provides information about your IP address and organization.\n\n" +
+      "For the best experience:\n" +
+      "• Use Microsoft Edge as your browser.\n" +
+      "• Ensure your PC's GPS is turned on.\n" +
+      "• If one of the markers is not visible, refresh your browser."
+    );
   };
 
   return (
@@ -85,6 +94,9 @@ function App() {
             Organization: {ipInfo.org}
           </Popup>
         </Marker>
+
+        {/* Polyline between GPS and IP locations */}
+        <Polyline positions={[gpsPosition, ipPosition]} color="blue" />
       </MapContainer>
 
       {/* Static Button at the Bottom Left */}
