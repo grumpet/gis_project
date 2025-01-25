@@ -10,6 +10,10 @@ This project is a web application that displays your current location based on G
 - Calculates and displays the distance between the GPS and IP locations.
 - Provides information about your IP address and organization.
 
+## Live Demo
+
+The project is available at: [https://gis-project-kaxx.onrender.com](https://gis-project-kaxx.onrender.com)
+
 ## Screenshots
 
 ### GPS Location
