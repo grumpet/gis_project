@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# GIS Location Project
+
+This project is a web application that displays your current location based on GPS coordinates and your approximate location based on your IP address. It uses the Haversine formula to calculate the distance between these two locations and displays this distance on a map.
+
+## Features
+
+- Displays your current location based on GPS coordinates.
+- Shows your approximate location based on your IP address.
+- Draws a line connecting the GPS and IP locations on the map.
+- Calculates and displays the distance between the GPS and IP locations.
+- Provides information about your IP address and organization.
+
+## Screenshots
+
+### GPS Location
+
+![GPS Location](image.png)
+
+### Internet Location
+
+![Internet Location](image-1.png)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
